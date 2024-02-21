@@ -1,0 +1,24 @@
+  
+  .main1{
+    background-color: #e8e3e3;
+    padding: 20px;
+    height: 50vh;
+    width: 45vw;
+  }
+
+  .center{
+    text-align: center;
+  }
+
+  .restart{
+    background-color: green;
+    color:white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: auto;
+    display: block;
+    text-decoration: none;
+    margin-top: 30px;
+  }

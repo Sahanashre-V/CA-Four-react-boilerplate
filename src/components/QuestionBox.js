@@ -3,8 +3,7 @@ import React from "react";
 import quizicon from "../Assets/quizicon.png";
 import questions from "./Question";
 import { useState } from "react";
-import {Link} from "react-router-dom";
-import { useEffect } from "react";
+import '../index.css';
 import { useNavigate } from "react-router-dom";
 
 export default function QuestionBox() {
@@ -15,47 +14,66 @@ export default function QuestionBox() {
         wrong: 0,
         score:0
       })
-    console.log(data.score)
-    // const history = useHistory();
+      const[highlight,setHighlight] = useState("blue")
+
+  
     const Navigate = useNavigate()
 
     const handleChange = (correct) => {
         if(state===4){
-            // <Link to="/result"></Link>
-            Navigate("/result")
-            
+            Navigate("/result",{state:data})            
         }
+
         else{
             if(correct === true){
                 setState(state + 1)
-                setData({...data,attempted:data.attempted+1,score:data.score + 1,wrong:data.wrong + 1})
-    
-    
+                setData({...data,attempted:data.attempted+1,score:data.score + 1,correct:data.correct + 1})
+
             }
             else{
                 setState(state + 1)
-                setData({...data,attempted:data.attempted+1,correct:data.correct + 1})
+                setData({...data,attempted:data.attempted+1,wrong:data.wrong + 1})
     
             }
 
         }
       
-
     }
     
+    const handleHighlight = () => {
+        setHighlight("red")
+    }
 
+    const handleRemoveHighlight = () => {
+        setHighlight("blue")
+    }
+
+    const [theme, setTheme] = useState("Light");
+    
+    const handleTheme = () => {
+        if (theme === "Light") {
+            setTheme("Dark");
+            document.body.style.backgroundColor = "black";
+        } 
+        else {
+            setTheme("Light");
+            document.body.style.backgroundColor = "white";
+        }
+    }
+    
+    
     return(
         <div className="container">
             <div className="main">
 
                 <div className="nav">
                 <img className="imgicon" src={quizicon} alt="" />
-                <button className="dark">Dark</button>
+                <button className="dark" onClick={handleTheme}>{theme}</button>
                 </div>
 
                 <h2 className="qn">Questions</h2>
                 <p className="qnno">{state + 1} of 5</p>
-                <p className="qns">{questions[state].text}</p>
+                <p className="qns" style={{color:highlight}}>{questions[state].text}</p>
 
 <div className="options">
 {
@@ -70,17 +88,10 @@ export default function QuestionBox() {
                 }
 </div>
                
-
                 <div className="footer">
-                    <button className="highlight">Highlight</button>
-                    <button className="highlight">Remove Highlight</button>
+                    <button className="highlight" onClick={handleHighlight}>Highlight</button>
+                    <button className="highlight" onClick={handleRemoveHighlight}>Remove Highlight</button>
                 </div>
-                {/* <Link to="/result">
-                <button>Result</button>
-                  </Link> */}
-
-
-
 
 
             </div>
