@@ -137,11 +137,6 @@ body{
   height: 60px;
 }
 
-.main{
-  max-width: fit-content;
-  height: 98vh;
-}
-
 .option{
   font-size: 0.9rem;
 }
