@@ -4,10 +4,13 @@
     padding: 20px;
     height: 50vh;
     width: 45vw;
+    overflow: hidden;
   }
 
   .center{
     text-align: center;
+    font-family: 'Licorice', cursive;
+
   }
 
   .restart{
@@ -21,4 +24,9 @@
     display: block;
     text-decoration: none;
     margin-top: 30px;
+    cursor: pointer;
+  }
+
+  .restart:hover {
+     background-color: purple;
   }
