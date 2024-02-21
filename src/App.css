@@ -1,16 +1,18 @@
   
+  /* styling for the div which contains the entire content */
   .main1{
     background-color: #e8e3e3;
-    padding: 20px;
-    height: 50vh;
-    width: 45vw;
+    padding: 80px;
+    height: auto;
+    width: auto;
     overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 20px;
   }
 
   .center{
     text-align: center;
     font-family: 'Licorice', cursive;
-
   }
 
   .restart{
@@ -27,6 +29,26 @@
     cursor: pointer;
   }
 
+  /* hover color for restart button */
   .restart:hover {
      background-color: purple;
   }
+
+  
+  /* Media queries */
+
+  @media screen and (min-width: 400px) and (max-width: 600px){
+
+.main1{
+    padding: 30px;
+}
+
+.restart{
+    font-size: 0.8rem;
+}
+
+body{
+    font-family: cursive;
+}
+
+  }    

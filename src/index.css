@@ -14,10 +14,12 @@ code {
 
 @import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
 
+/* quiz icon styling */
 .imgicon{
   height: 110px;
 }
 
+/* stying for entire body */
 body{
   display: flex;
   justify-content: center;
@@ -25,13 +27,20 @@ body{
   height: 100vh;
   margin: 0;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
+/* styling for main div which contains all the content */
 .main{
   background-color: #e8e3e3;
   padding: 20px;
-  height: 70vh;
+  max-width: 100%;
+  box-sizing: border-box;
+  height: 85vh;
   width: 60vw;
+  max-width: 100%;
+  border-radius: 15px;
+  padding: 40px;
 }
 
 .nav{
@@ -40,9 +49,9 @@ body{
   align-items: center;
 }
 
+/* dark mode and light mode  */
 .dark{
   padding: 10px;
-  width: 10%;
   background-color: #0e0511c0;
   color: white;
   font-weight: 600;
@@ -50,6 +59,7 @@ body{
   cursor: pointer;
   font-family: cursive;
   font-size: 1rem;
+  text-align: center;
 }
 
 .qn{
@@ -61,10 +71,11 @@ body{
   display: grid;
   grid-template-columns: repeat(2,1fr);
   gap:20px;
+  align-items: center;
 }
 
+/* option styling */
 .option{
-  width: 90%;
   padding: 10px;
   background-color: burlywood;
   color: white;
@@ -73,8 +84,10 @@ body{
   cursor: pointer;
   font-family: cursive;
   font-size: 1.1rem;
+  width: 100%;
 }
 
+/* hover color for options   */
 .option:hover {
   background-color: greenyellow;
 }
@@ -87,12 +100,11 @@ body{
   gap:30px;
 }
 
-
 .qns{
   text-align: center;
   padding-bottom: 20px;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-family: 'Licorice', cursive;
 }
 
@@ -100,6 +112,7 @@ body{
   padding-top: 15px;
 }
 
+/* styling for question highlight button  */
 .highlight{
   background-color: #F34E9D;
   padding: 10px;
@@ -114,4 +127,27 @@ body{
 
 .highlight:hover{
   background-color: purple;
+}
+
+
+/* Mobile Responsive */
+@media screen and (min-width: 400px) and (max-width: 600px){
+
+.imgicon {
+  height: 60px;
+}
+
+.main{
+  max-width: fit-content;
+  height: 98vh;
+}
+
+.option{
+  font-size: 0.9rem;
+}
+
+body{
+  font-family: cursive;
+}
+
 }

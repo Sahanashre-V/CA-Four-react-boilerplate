@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./App.css";
 import Result from "./components/Result";
 import QuestionBox from "./components/QuestionBox";
@@ -11,6 +11,7 @@ function App() {
 
   return (
     <div>
+      {/* using routes,route to navigate from one component to another */}
      
       <Routes>
         <Route exact path="/" element={<QuestionBox/>}/>

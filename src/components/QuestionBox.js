@@ -7,6 +7,8 @@ import '../index.css';
 import { useNavigate } from "react-router-dom";
 
 export default function QuestionBox() {
+
+    // useState to handle the state changes for score, to change the questions 
     const [state,setState] = useState(0)
     const [data,setData] = useState({
         attempted: 0,
@@ -16,12 +18,13 @@ export default function QuestionBox() {
       })
       const[highlight,setHighlight] = useState("blue")
 
-  
+  //useNavigate to navigate to another page and using this props can also be sent
     const Navigate = useNavigate()
 
+    //checking the choosed option is correct or wrong
     const handleChange = (correct) => {
         if(state===4){
-            Navigate("/result",{state:data})            
+            Navigate("/result",{state:data})      //sending data as props      
         }
 
         else{
@@ -40,6 +43,7 @@ export default function QuestionBox() {
       
     }
     
+    //highlighting question
     const handleHighlight = () => {
         setHighlight("red")
     }
@@ -48,6 +52,7 @@ export default function QuestionBox() {
         setHighlight("blue")
     }
 
+    //changing the color of document body
     const [theme, setTheme] = useState("Light");
     
     const handleTheme = () => {
@@ -75,6 +80,7 @@ export default function QuestionBox() {
                 <p className="qnno">{state + 1} of 5</p>
                 <p className="qns" style={{color:highlight}}>{questions[state].text}</p>
 
+{/* looping through the options and creating button for each option */}
 <div className="options">
 {
                     questions[state].options.map(function(ele,ind){
@@ -87,7 +93,8 @@ export default function QuestionBox() {
                     })
                 }
 </div>
-               
+
+      {/* to highlight the question and remove the highlight*/}
                 <div className="footer">
                     <button className="highlight" onClick={handleHighlight}>Highlight</button>
                     <button className="highlight" onClick={handleRemoveHighlight}>Remove Highlight</button>

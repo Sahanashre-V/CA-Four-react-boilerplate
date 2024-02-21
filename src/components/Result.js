@@ -6,13 +6,16 @@ import "../App.css";
 import {useState} from "react"
 
 export default function Result() {
+
+  // with help of useLocation getting the prop which is sent from  QuestionBox.js
   let Location = useLocation()
   const myProp = Location.state 
-// console.log(myProp.score)
+//console.log(myProp.wrong)
 
 
 const [theme, setTheme] = useState("Light");
     
+// Change the backgroundColor from dark to light and light to dark
 const handleTheme = () => {
     if (theme === "Light") {
         setTheme("Dark");
@@ -36,6 +39,7 @@ const handleTheme = () => {
           <h1 className="center">Final Results</h1>
           <h2 className="center">{myProp.correct} out of 5 are correct - ({(myProp.score/5)*100}%)</h2>
 
+{/* Navigating to result page after clicking the restart button using link */}
           <Link to="/">
           <button className="restart">Restart game</button>
           </Link>
