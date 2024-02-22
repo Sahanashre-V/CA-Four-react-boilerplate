@@ -7,7 +7,7 @@
     width: auto;
     overflow: hidden;
     box-sizing: border-box;
-    border-radius: 20px;
+    border-radius: 30px;
   }
 
   .center{
@@ -34,10 +34,14 @@
      background-color: purple;
   }
 
+  .quizname{
+    color:rgb(255, 153, 0);
+    font-family: cursive;
+  }
   
-  /* Media queries */
+  /* Media queries mobile responsive */
 
-  @media screen and (min-width: 400px) and (max-width: 600px){
+  @media (min-width: 320px) and (max-width: 600px){
 
 .main1{
     padding: 30px;
@@ -51,4 +55,21 @@ body{
     font-family: cursive;
 }
 
+.center{
+  font-size: 0.9rem;
+}
+
+.quizname{
+  font-size: 1.3rem;
+}
+
+
   }    
+
+  /* tab responsive */
+
+  @media screen and (min-width: 768px) and (max-width:769px){
+  .restart{
+    font-size: 1rem;
+}
+  }

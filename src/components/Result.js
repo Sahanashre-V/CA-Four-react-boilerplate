@@ -3,7 +3,7 @@ import quizicon from "../Assets/quizicon.png";
 import { useLocation } from 'react-router-dom';
 import {Link} from "react-router-dom";
 import "../App.css";
-import {useState} from "react"
+import {useState} from "react";
 
 export default function Result() {
 
@@ -33,6 +33,10 @@ const handleTheme = () => {
 
 <div className="nav">
           <img className="imgicon" src={quizicon} alt="" />
+          <h1 className="quizname">QuizGenius</h1>
+          </div>
+
+          <div className='btn'>
           <button className="dark" onClick={handleTheme}>{theme}</button>
           </div>
 

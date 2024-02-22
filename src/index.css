@@ -35,16 +35,15 @@ body{
   padding: 20px;
   max-width: 100%;
   box-sizing: border-box;
-  height: 85vh;
-  width: 60vw;
   max-width: 100%;
-  border-radius: 15px;
+  border-radius: 30px;
   padding: 40px;
+  width:60vw;
 }
 
 .nav{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -58,7 +57,12 @@ body{
   cursor: pointer;
   font-family: cursive;
   font-size: 1rem;
-  text-align: center;
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .qn{
@@ -67,8 +71,10 @@ body{
 }
 
 .options{
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap:20px;
   align-items: center;
 }
@@ -128,9 +134,13 @@ body{
   background-color: purple;
 }
 
+.quiznam{
+  color:rgb(255, 153, 0);
+  font-family: cursive;
+}
 
 /* Mobile Responsive */
-@media screen and (min-width: 400px) and (max-width: 600px){
+@media (min-width: 320px) and (max-width: 600px){
 
 .imgicon {
   height: 60px;
@@ -138,10 +148,82 @@ body{
 
 .option{
   font-size: 0.9rem;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+.options{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:5px;
+  align-items: center;
+}
+
+.quiznam{
+  font-size: 1.1rem;
 }
 
 body{
   font-family: cursive;
+}
+
+.highlight{
+  background-color: #F34E9D;
+  padding: 10px;
+  border-radius: 10px;
+  color:white;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-family: 'Love Ya Like A Sister', cursive;
+  margin-bottom: 40px;
+}
+
+.footer{
+  padding-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:30px;
+}
+
+.dark{
+  font-size: 1rem;
+}
+
+.main{
+  width:80vw;
+}
+
+}
+
+
+/* tab responsive */
+
+@media screen and (min-width: 768px) and (max-width:769px){
+.footer{
+  padding-top: 5px;
+}
+
+.qns{
+  padding-bottom: 2px;
+}
+
+.qnno{
+  padding-top: 2px;
+}
+
+.option{
+  width:80%;
+  font-size: 0.9rem;
+}
+
+.highlight{
+  padding: 7px;
+  font-family: cursive;
+  width:30%;
+  font-size: 0.8rem;
+  margin-top: 20px;
 }
 
 }

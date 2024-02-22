@@ -73,6 +73,10 @@ export default function QuestionBox() {
 
                 <div className="nav">
                 <img className="imgicon" src={quizicon} alt="" />
+                <h1 className="quiznam">QuizGenius</h1>
+                {/* <button className="dark" onClick={handleTheme}>{theme}</button> */}
+                </div>
+                <div className="btn">
                 <button className="dark" onClick={handleTheme}>{theme}</button>
                 </div>
 
