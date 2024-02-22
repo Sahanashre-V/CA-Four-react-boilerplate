@@ -23,25 +23,30 @@ export default function QuestionBox() {
 
     //checking the choosed option is correct or wrong
     const handleChange = (correct) => {
-        if(state===4){
-            Navigate("/result",{state:data})      //sending data as props      
-        }
+        if(state === 4){
+            setData(prevData => ({
+                attempted: prevData.attempted + 1,
+                score: correct ? prevData.score + 1 : prevData.score,
+                correct: correct ? prevData.correct + 1 : prevData.correct,
+                wrong: correct ? prevData.wrong : prevData.wrong + 1
 
-        else{
-            if(correct === true){
-                setState(state + 1)
-                setData({...data,attempted:data.attempted+1,score:data.score + 1,correct:data.correct + 1})
-
-            }
-            else{
-                setState(state + 1)
-                setData({...data,attempted:data.attempted+1,wrong:data.wrong + 1})
+            }))
+            Navigate("/result",{state:data}); // Sending data as props
+        } else {
+            // Update state only once
+            setState(state + 1);
     
-            }
-
+            // Update data based on correctness
+            setData(prevData => ({
+                ...prevData,
+                attempted: prevData.attempted + 1,
+                score: correct ? prevData.score + 1 : prevData.score,
+                correct: correct ? prevData.correct + 1 : prevData.correct,
+                wrong: correct ? prevData.wrong : prevData.wrong + 1
+            }));
         }
-      
-    }
+    };
+    
     
     //highlighting question
     const handleHighlight = () => {
