@@ -12,7 +12,6 @@ export default function Result() {
   const myProp = Location.state 
 //console.log(myProp.wrong)
 
-
 const [theme, setTheme] = useState("Light");
     
 // Change the backgroundColor from dark to light and light to dark

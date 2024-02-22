@@ -24,19 +24,22 @@ export default function QuestionBox() {
     //checking the choosed option is correct or wrong
     const handleChange = (correct) => {
         if(state === 4){
-            setData(prevData => ({
-                attempted: prevData.attempted + 1,
-                score: correct ? prevData.score + 1 : prevData.score,
-                correct: correct ? prevData.correct + 1 : prevData.correct,
-                wrong: correct ? prevData.wrong : prevData.wrong + 1
+            Navigate("/result",{state:{
+                ...data,
+                attempted: data.attempted + 1,
+                score: correct ? data.score + 1 : data.score,
+                correct: correct ? data.correct + 1 : data.correct,
+                wrong: correct ? data.wrong : data.wrong + 1
 
-            }))
-            Navigate("/result",{state:data}); // Sending data as props
-        } else {
+            }}); // Sending data as props
+            
+        }
+        
+         else {
             // Update state only once
             setState(state + 1);
     
-            // Update data based on correctness
+            // Update data based on options choosed
             setData(prevData => ({
                 ...prevData,
                 attempted: prevData.attempted + 1,
